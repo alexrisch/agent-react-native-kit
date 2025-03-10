@@ -1,11 +1,12 @@
 import { Text, type TextProps, StyleSheet } from 'react-native';
 
 import { useThemeColor } from '@/hooks/useThemeColor';
+import Animated from 'react-native-reanimated';
 
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
+  type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link' | 'body';
 };
 
 export function ThemedText({
@@ -56,5 +57,9 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     fontSize: 16,
     color: '#0a7ea4',
+  },
+  body: {
+    fontSize: 14,
+    lineHeight: 16,
   },
 });
